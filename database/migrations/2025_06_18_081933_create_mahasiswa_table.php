@@ -13,13 +13,15 @@ return new class extends Migration
 Schema::create('mahasiswa', function (Blueprint $table) {
     $table->id();
     $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null')->onUpdate('cascade');
-    $table->string('npm')->nullable();
+    $table->string('profil')->nullable();
     $table->string('nama')->nullable();
-    $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan'])->nullable();
+    $table->string('email')->nullable();
+    $table->string('npm')->nullable();
+    $table->string('universitas')->nullable();
     $table->string('tempat_lahir')->nullable();
     $table->date('tanggal_lahir')->nullable();
     $table->string('agama')->nullable();
-    $table->string('status')->nullable();
+    $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan'])->nullable();
     $table->string('provinsi')->nullable();
     $table->string('kabupaten')->nullable();
     $table->string('kecamatan')->nullable();

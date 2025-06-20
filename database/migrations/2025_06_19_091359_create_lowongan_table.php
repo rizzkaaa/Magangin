@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('posisi');
             $table->string('kuota');
             $table->string('lokasi');
-            $table->enum('gender', ['Perempuan', 'Laki-laki']);
+            $table->enum('jenis_kelamin', ['Perempuan', 'Laki-laki']);
             $table->string('rentang_usia');
             $table->date('mulai_magang');
             $table->date('selesai_magang');

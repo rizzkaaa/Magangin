@@ -28,28 +28,28 @@
     <section class="bg-[#1d222efb] w-full flex flex-col items-center">
       <div id="dashboard" class="menu w-full  h-[572px] overflow-y-auto flex-col items-center justify-center">
         {{-- Jika lowongan kosong --}}
-        <div class="flex flex-col items-center justify-center text-white w-full h-full">
+        {{-- <div class="flex flex-col items-center justify-center text-white w-full h-full">
           <p>Anda belum mengupload lowongan apapun. </p>
           <p>Upload lowongan anda disini..</p>
           <a href="#input-lowongan"
             class="px-5 py-2 rounded-md bg-[rgb(61,99,221)] text-white font-semibold  hover:bg-[rgb(27,61,173)] cursor-pointer">Input
             Lowongan</a>
-        </div>
-
-        {{-- <div class="flex flex-wrap w-full h-full" style="justify-content: space-evenly;">
-          <x-card-lowongan></x-card-lowongan>
-          <x-card-lowongan></x-card-lowongan>
-          <x-card-lowongan></x-card-lowongan>
-          <x-card-lowongan></x-card-lowongan>
-          <x-card-lowongan></x-card-lowongan>
-          <x-card-lowongan></x-card-lowongan>
-          <x-card-lowongan></x-card-lowongan>
-          <x-card-lowongan></x-card-lowongan>
-          <x-card-lowongan></x-card-lowongan>
-          <x-card-lowongan></x-card-lowongan>
-          <x-card-lowongan></x-card-lowongan>
-          <x-card-lowongan></x-card-lowongan>
         </div> --}}
+
+        <div class="flex flex-wrap w-full h-full" style="justify-content: space-evenly;">
+          <x-card-lowongan></x-card-lowongan>
+          <x-card-lowongan></x-card-lowongan>
+          <x-card-lowongan></x-card-lowongan>
+          <x-card-lowongan></x-card-lowongan>
+          <x-card-lowongan></x-card-lowongan>
+          <x-card-lowongan></x-card-lowongan>
+          <x-card-lowongan></x-card-lowongan>
+          <x-card-lowongan></x-card-lowongan>
+          <x-card-lowongan></x-card-lowongan>
+          <x-card-lowongan></x-card-lowongan>
+          <x-card-lowongan></x-card-lowongan>
+          <x-card-lowongan></x-card-lowongan>
+        </div>
       </div>
 
       <form class="menu w-full flex-col items-end max-h-[572px] overflow-y-auto" id="profil">
@@ -173,8 +173,8 @@
 
             <div class="flex-1">
               <div class="flex flex-col px-5 py-2">
-                <label class="text-white font-bold">Gender</label>
-                <select name="gender" class="bg-[#e8f0fe] rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] rounded-br-none p-[5px] rounded-[10px] shadow-sm focus:outline-none">
+                <label class="text-white font-bold">Jenis Kelamin</label>
+                <select name="jenis_kelamin" class="bg-[#e8f0fe] rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] rounded-br-none p-[5px] rounded-[10px] shadow-sm focus:outline-none">
                   <option></option>
                   <option value="Laki-laki">Laki-laki</option>
                   <option value="Perempuan">Perempuan</option>
@@ -298,7 +298,7 @@
               <td class="p-[10px]">12/06/2025</td>
               <td class="p-[10px]">09.24</td>
               <td class="p-[10px]">
-                <a href=""
+                <a href="/data-pelamar"
                   class="px-[14px] py-[6px] text-white text-[13px] font-bold rounded-[20px] bg-red-400 inline-block">
                   Menunggu
                 </a>

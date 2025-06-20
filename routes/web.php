@@ -22,9 +22,10 @@ Route::middleware([CekLogin::class])->group(function () {
     Route::get('/dashboard-mahasiswa', fn() => view('dashboard-mahasiswa'))->name('dashboard.mahasiswa');
     Route::get('/dashboard-perusahaan', fn() => view('dashboard-perusahaan'))->name('dashboard.perusahaan');
 });
-// Route::get('/dashboard-dosen', function () {
-//     return view('dashboard-dosen');
-// })->name('dashboard.dosen');
+
+Route::get('/data-pelamar', function () {
+    return view('data-pelamar');
+});
 
 // Route::get('/dashboard-mahasiswa', function () {
 //     return view('dashboard-mahasiswa');
