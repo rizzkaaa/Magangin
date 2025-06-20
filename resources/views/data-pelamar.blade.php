@@ -99,7 +99,7 @@
                 <textarea name="alamat" rows="4"
                     class="bg-[#e8f0fe] rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] rounded-br-none p-[5px] rounded-[10px] shadow-sm focus:outline-none"></textarea>
             </div>
-            
+
             <div class="flex-1">
                 <div class="flex flex-col px-5 py-2">
                     <label class="text-white font-bold">Provinsi</label>
@@ -135,12 +135,17 @@
 
         <!-- Tombol -->
         <div class="mx-5 my-2 w-full flex flex-col items-center">
-            <button onclick="window.history.back()" style="width: 95%; margin: 10px; padding: 8px; background-color: rgba(255, 255, 255, 0.39); border-radius: 20px; border: 1px solid white; color: white; font-weight: bold;">
+            <!-- Tombol Kembali -->
+            <button onclick="window.history.back()"
+                class="w-[95%] m-[10px] px-4 py-2 bg-white/40 rounded-[20px] border border-white text-white font-bold">
                 Kembali
             </button>
-            <button style="width: 95%; margin: 10px; padding: 8px; background-color: rgb(74, 238, 10);  border-radius: 20px; color: white; font-weight: bold;">
+
+            <!-- Tombol Setujui -->
+            <button class="w-[95%] m-[10px] px-4 py-2 bg-[#4aee0a] rounded-[20px] text-white font-bold">
                 Setujui
             </button>
+
         </div>
         </div>
     </section>

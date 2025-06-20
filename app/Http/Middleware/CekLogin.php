@@ -8,16 +8,27 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CekLogin
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
     public function handle(Request $request, Closure $next): Response
     {
         if (!session()->has('user_id')) {
-            return redirect()->route('masuk')->withErrors(['error' => 'Silakan login terlebih dahulu']);
+            return redirect()->route('masuk')->withErrors([
+                'error' => 'Silakan login terlebih dahulu.'
+            ]);
         }
+
+        $role = session('user_role');
+        $path = $request->path(); 
+
+        $allowedRoutes = [
+            'mahasiswa' => 'dashboard-mahasiswa',
+            'dosen' => 'dashboard-dosen',
+            'perusahaan' => 'dashboard-perusahaan',
+        ];
+
+        if (isset($allowedRoutes[$role]) && $path !== $allowedRoutes[$role]) {
+            return abort(403, 'Anda mengakses rute yang salah.');
+        }
+
         return $next($request);
     }
 }

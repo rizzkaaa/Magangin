@@ -1,7 +1,7 @@
 @props(['menus'])
-<aside id="sidebar" class="ustify-between w-0 overflow-hidden
+<aside id="sidebar" class="justify-between w-0 overflow-hidden
  transition-all duration-1000 ease-in-out bg-[#b7c1ff] flex flex-col">
-  <ul class="flex-1">
+  <ul class="flex-">
     @foreach ($menus as $menu)
     <li>
       <a href="{{ $menu['url'] }}"

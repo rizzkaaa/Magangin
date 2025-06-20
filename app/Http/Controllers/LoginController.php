@@ -40,6 +40,7 @@ class LoginController extends Controller
             'user_id' => $user->id,
             'user_email' => $user->email,
             'user_nama' => $nama,
+            'user_role' => $user->role
         ]);
 
         return match($user->role) {

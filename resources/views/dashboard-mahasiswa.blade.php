@@ -14,7 +14,7 @@
 </head>
 
 <body class="h-screen flex flex-col font-sans">
-  <x-header :nama="session(key: 'user_nama')" :email="session('user_email')"></x-header>
+  <x-header :nama="session(key: 'user_nama')" :email="session('user_email')" :quote="'Jadilah'"></x-header>
 
   <div class="flex flex-1 relative">
       <x-sidebar :menus="[

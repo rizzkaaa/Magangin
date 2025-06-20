@@ -12,6 +12,7 @@ return new class extends Migration
           Schema::create('dosen', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null')->onUpdate('cascade');
+            $table->string('profil')->nullable();
             $table->string('nama_dosen')->nullable();
             $table->string('nip')->unique()->nullable();
             $table->string('universitas')->nullable();

@@ -27,9 +27,9 @@ Route::get('/data-pelamar', function () {
     return view('data-pelamar');
 });
 
-// Route::get('/dashboard-mahasiswa', function () {
-//     return view('dashboard-mahasiswa');
-// })->name('dashboard.mahasiswa');
+Route::get('/nilai-mahasiswa', function () {
+    return view('nilai-mahasiswa');
+});
 
 // Route::get('/dashboard-perusahaan', function () {
 //     return view('dashboard-perusahaan');

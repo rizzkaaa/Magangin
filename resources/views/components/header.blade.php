@@ -1,4 +1,4 @@
-@props(['nama', 'email'])
+@props(['nama', 'email', 'quote'])
 
 <header class="flex justify-between items-center bg-[#455bd4] text-white px-8 py-3">
     <div class="flex flex-col  w-[40px] relative group" id="toggle-menu">
@@ -14,7 +14,7 @@
     <div class="w-[60%]">
       <h2 class="font-semibold text-[25px]">Selamat Datang, <span id="nama-perusahaan">{{ $nama }}</span>
       </h2>
-      <p class="text-sm">Temukan generasi genius selanjutnya.</p>
+      <p class="text-sm">{{ $quote }} generasi genius selanjutnya.</p>
     </div>
 
     <div class="flex items-center gap-3">
