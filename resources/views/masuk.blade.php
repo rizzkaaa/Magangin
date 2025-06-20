@@ -35,16 +35,30 @@
         </div>
       </div>
       <div class="form-input">
-        <form id="registrasi" action="">
+        @if(session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                        <li style="list-style: none">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+            <form action="{{ route('register.submit') }}" method="POST">
+            @csrf
           <div class="wrapper">
             <div class="container-input-peran">
               <h2>Anda ingin mendaftar sebagai apa?</h2>
 
               <div class="wrap-input-peran">
                 <div class="input-peran">
-                  <input type="radio" name="peran" class="peran" id="peserta" />
-                  <label for="peserta"
-                    >Peserta <i class="fa-solid fa-graduation-cap"></i>
+                  <input type="radio" name="role" value="mahasiswa" class="peran" id="mahasiswa" />
+                  <label for="mahasiswa"
+                    >Mahasiswa <i class="fa-solid fa-graduation-cap"></i>
                   </label>
                   <p>
                     Mendaftar ke lowongan pekerjaan yang tersedia, mengikuti
@@ -53,7 +67,7 @@
                   </p>
                 </div>
                 <div class="input-peran">
-                  <input type="radio" name="peran" class="peran" id="dosen" />
+                  <input type="radio" name="role" value="dosen" class="peran" id="dosen" />
                   <label for="dosen"
                     >Dosen <i class="fa-solid fa-school"></i>
                   </label>
@@ -63,7 +77,7 @@
                   </p>
                 </div>
                 <div class="input-peran">
-                  <input type="radio" name="peran" class="peran" id="perusahaan" />
+                  <input type="radio" name="role" value="perusahaan" class="peran" id="perusahaan" />
                   <label for="perusahaan"
                     >Perusahaan <i class="fa-solid fa-building"></i>
                   </label>
@@ -79,17 +93,17 @@
               <i class="fa-solid fa-users"></i>
               <div class="wrap-input-password">
                 <div class="input-password">
+                  <i class="fa-solid fa-user"></i>
+                  <div>
+                    <input type="text" id="nama" name="nama" required />
+                    <label for="nama">Nama: </label>
+                  </div>
+                </div>
+                <div class="input-password">
                   <i class="fa-solid fa-at"></i>
                   <div>
                     <input type="email" id="emailDaftar" name="email" required />
                     <label for="emailDaftar">Email: </label>
-                  </div>
-                </div>
-                <div class="input-password">
-                  <i class="fa-solid fa-phone"></i>
-                  <div>
-                    <input type="text" id="no_tlp" name="no_tlp" required />
-                    <label for="no_tlp">Telepon: </label>
                   </div>
                 </div>
                 <div class="input-password">
@@ -110,7 +124,8 @@
           </div>
         </form>
 
-        <form id="masuk" action="">
+        <form action="{{ route('login.submit') }}" id="masuk" method="POST">
+            @csrf
           <div class="container-input-password">
             <i class="fa-solid fa-users"></i>
             <div class="wrap-input-password">

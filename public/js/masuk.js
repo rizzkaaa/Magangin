@@ -39,11 +39,7 @@ function handleClick() {
     setTimeout(() => {
         newArray.forEach(array => array.style.animation = "")
     }, 2000);
-
-    console.log(bigLabel);
-    
-    // bigLabel.classList.toggle("masuk");
-    // bigLabel.classList.toggle("daftar");
 }
 
-
+// const alert = document.querySelector('.alert');
+// alert.

@@ -1,0 +1,91 @@
+.profil-section {
+  padding: 32px;
+  width: 100%;
+  background-color: #1d222efb;
+  color: white;
+}
+
+.profil-section h2 {
+  margin-bottom: 16px;
+}
+
+.profile-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.profile-form input,
+.profile-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: #e0edff;
+  color: #111827;
+}
+
+.form-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.form-left {
+  flex: 2;
+  min-width: 300px;
+}
+
+.form-right {
+  flex: 1;
+  min-width: 200px;
+}
+
+.form-grid {
+  display: flex;
+  gap: 16px;
+}
+
+.form-grid > div {
+  flex: 1;
+}
+
+.logo-box {
+  background-color: #e0edff;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.logo-box i {
+  font-size: 36px;
+  color: #555;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-container {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.edit-btn {
+  background-color: #f97316;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: #ea580c;
+}

@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Middleware\CekLogin;
 
 Route::get('/', function () {
     return view('home');
@@ -8,11 +12,31 @@ Route::get('/', function () {
 
 Route::get('/masuk', function () {
     return view('masuk');
-});
+})->name('masuk');
 
-Route::get('/dashboard-dosen', function () {
-    return view('dashboard-dosen');
+Route::post('/register', [RegisterController::class, 'submit'])->name('register.submit');
+Route::post('/login', [LoginController::class, 'submit'])->name('login.submit');
+
+Route::middleware([CekLogin::class])->group(function () {
+    Route::get('/dashboard-dosen', fn() => view('dashboard-dosen'))->name('dashboard.dosen');
+    Route::get('/dashboard-mahasiswa', fn() => view('dashboard-mahasiswa'))->name('dashboard.mahasiswa');
+    Route::get('/dashboard-perusahaan', fn() => view('dashboard-perusahaan'))->name('dashboard.perusahaan');
 });
+// Route::get('/dashboard-dosen', function () {
+//     return view('dashboard-dosen');
+// })->name('dashboard.dosen');
+
+// Route::get('/dashboard-mahasiswa', function () {
+//     return view('dashboard-mahasiswa');
+// })->name('dashboard.mahasiswa');
+
+// Route::get('/dashboard-perusahaan', function () {
+//     return view('dashboard-perusahaan');
+// })->name('dashboard.perusahaan');
+
+Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+
+
 // Route::get('/test', function () {
 //     return view('test');
 // });
