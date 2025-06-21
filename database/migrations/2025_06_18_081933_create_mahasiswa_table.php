@@ -27,6 +27,7 @@ Schema::create('mahasiswa', function (Blueprint $table) {
     $table->string('kecamatan')->nullable();
     $table->string('desa')->nullable();
     $table->text('alamat')->nullable();
+    $table->enum('status', ['Sedang Magang', 'Tidak Magang'])->nullable();
     $table->timestamps();
 });
 

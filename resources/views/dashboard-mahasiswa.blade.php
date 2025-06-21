@@ -159,7 +159,7 @@
                 <a href="#edit-laporan" class="text-[#3498db] hover:opacity-70 text-[18px]">
                   <i class="fa fa-pen"></i>
                 </a>
-                <a href="#hapus-jadwal" class="text-[#e74c3c] hover:opacity-70 text-[18px]">
+                <a href="#hapus-laporan" class="text-[#e74c3c] hover:opacity-70 text-[18px]">
                   <i class="fa fa-trash"></i>
                 </a>
               </td>
@@ -171,6 +171,12 @@
           class="modal-parent absolute top-0 left-0 w-full h-full hidden flex justify-center items-center">
           <a href="#laporan-magang" class="overlay absolute w-full h-full bg-black/30 backdrop-blur-sm"></a>
           <x-form-laporan :action="'Edit'"></x-form-laporan>
+        </div>
+
+        <div id="hapus-laporan"
+          class="modal-parent absolute top-0 left-0 w-full h-full hidden flex justify-center items-center">
+          <a href="#laporan-magang" class="overlay absolute w-full h-full bg-black/30 backdrop-blur-sm"></a>
+          <x-alert-hapus></x-alert-hapus>
         </div>
 
         <div id="tambah-laporan"
@@ -185,8 +191,11 @@
 
   <script src="/js/dashboard.js"></script>
   <script>
-    if (window.location.hash == "#edit-laporan" || window.location.hash == "#tambah-laporan") {
-      document.getElementById("laporan-magang").style.display = "flex"
+    
+    if (window.location.hash == "#edit-laporan" || window.location.hash == "#tambah-laporan" || window.location.hash == "#hapus-laporan") {
+      // document.getElementById("laporan-magang").style.display = "flex"
+      console.log(1);
+      
     }
   </script>
 </body>
