@@ -37,5 +37,11 @@ class Lowongan extends Model
         return $this->hasMany(Dokumen::class);
     }
 
-    use HasFactory
+    public function pelamar()
+    {
+        return $this->belongsToMany(Mahasiswa::class, 'detail_apply', 'id_lowongan', 'id_mahasiswa')
+            ->withPivot('tgl_apply', 'jam_apply', 'status');
+    }
+
+    use HasFactory;
 }
