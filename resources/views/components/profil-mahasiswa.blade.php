@@ -82,6 +82,7 @@
             <select name="provinsi"
                 class="bg-[#e8f0fe] rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] rounded-br-none p-[5px] rounded-[10px] shadow-sm focus:outline-none">
                 <option>Pilih Provinsi</option>
+                <option>Pilih aku</option>
             </select>
         </div>
         <div class="flex flex-col px-5 py-2">
@@ -108,3 +109,81 @@
         </div>
     </div>
 </div>
+
+<script>
+    // 🔽 Muat data provinsi
+    async function loadProvinsis() {
+        const response = await fetch('/api/provinsis');
+        const data = await response.json();
+
+        const provinsiSelect = document.querySelector('select[name="provinsi"]');
+        provinsiSelect.innerHTML = '<option value="">Pilih Provinsi</option>';
+
+        data.forEach(provinsi => {
+            const option = document.createElement('option');
+            option.value = provinsi.id;
+            option.textContent = provinsi.name;
+            provinsiSelect.appendChild(option);
+        });
+    }
+
+    // 🔽 Muat kabupaten berdasarkan provinsi_id
+    async function loadKabupatens(provinsiId) {
+        const kabupatenSelect = document.querySelector('select[name="kabupaten"]');
+        kabupatenSelect.innerHTML = '<option value="">Memuat kabupaten...</option>';
+        document.querySelector('select[name="kecamatan"]').innerHTML = '<option value="">Pilih Kecamatan</option>';
+
+        if (!provinsiId) {
+            kabupatenSelect.innerHTML = '<option value="">Pilih Kabupaten</option>';
+            return;
+        }
+
+        const response = await fetch(`/api/kabupatens?provinsi_id=${provinsiId}`);
+        const data = await response.json();
+
+        kabupatenSelect.innerHTML = '<option value="">Pilih Kabupaten</option>';
+        data.forEach(kabupaten => {
+            const option = document.createElement('option');
+            option.value = kabupaten.id;
+            option.textContent = kabupaten.name;
+            kabupatenSelect.appendChild(option);
+        });
+    }
+
+    // 🔽 Muat kecamatan berdasarkan kabupaten_id
+    async function loadKecamatans(kabupatenId) {
+        const kecamatanSelect = document.querySelector('select[name="kecamatan"]');
+        kecamatanSelect.innerHTML = '<option value="">Memuat kecamatan...</option>';
+
+        if (!kabupatenId) {
+            kecamatanSelect.innerHTML = '<option value="">Pilih Kecamatan</option>';
+            return;
+        }
+
+        const response = await fetch(`/api/kecamatans?kabupaten_id=${kabupatenId}`);
+        const data = await response.json();
+
+        kecamatanSelect.innerHTML = '<option value="">Pilih Kecamatan</option>';
+        data.forEach(kecamatan => {
+            const option = document.createElement('option');
+            option.value = kecamatan.id;
+            option.textContent = kecamatan.name;
+            kecamatanSelect.appendChild(option);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadProvinsis();
+
+        const provinsiSelect = document.querySelector('select[name="provinsi"]');
+        const kabupatenSelect = document.querySelector('select[name="kabupaten"]');
+
+        provinsiSelect.addEventListener('change', (e) => {
+            loadKabupatens(e.target.value);
+        });
+
+        kabupatenSelect.addEventListener('change', (e) => {
+            loadKecamatans(e.target.value);
+        });
+    });
+</script>
