@@ -1,3 +1,4 @@
+
 <div class="flex w-full p-5">
     <div class="mx-5 my-2">
         <label class="text-white font-bold">Profil</label>

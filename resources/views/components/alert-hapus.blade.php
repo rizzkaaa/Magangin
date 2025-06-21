@@ -12,10 +12,10 @@
   </div>
 
   <div class="flex justify-center gap-4">
-    <button onclick="batalHapus()" class="bg-gray-300 text-gray-800 font-semibold px-4 py-2 rounded-lg hover:bg-gray-400 transition">
+    <button onclick="window.location.href = '#laporan-magang'" class="bg-gray-300 text-gray-800 font-semibold px-4 py-2 rounded-lg hover:bg-gray-400 transition">
       Batal
     </button>
-    <button onclick="konfirmasiHapus()" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-red-700 transition">
+    <button onclick="window.location.href = '#laporan-magang'" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-red-700 transition">
       Hapus
     </button>
   </div>
