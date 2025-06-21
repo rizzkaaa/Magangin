@@ -31,9 +31,9 @@ Route::get('/nilai-mahasiswa', function () {
     return view('nilai-mahasiswa');
 });
 
-// Route::get('/dashboard-perusahaan', function () {
-//     return view('dashboard-perusahaan');
-// })->name('dashboard.perusahaan');
+Route::get('/jadwal-bimbingan', function () {
+    return view('jadwal-bimbingan');
+});
 
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 

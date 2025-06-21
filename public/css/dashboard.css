@@ -8,3 +8,10 @@
 .menu:target{
   display: flex;
 }
+
+.modal-parent{
+  display: none;
+}
+.modal-parent:target{
+  display: flex;
+}

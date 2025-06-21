@@ -246,7 +246,7 @@
             </div>
             <div class="text-[14px] text-[#333]">
               10:00 - 11:00
-              <span class="ml-2"><a href="tampilanJB.html">&gt;</a></span>
+              <span class="ml-2"><a href="/jadwal-bimbingan">&gt;</a></span>
             </div>
           </div>
 
@@ -257,7 +257,7 @@
             </div>
             <div class="text-[14px] text-[#333]">
               10:00 - 11:00
-              <span class="ml-2"><a href="tampilanJB.html">&gt;</a></span>
+              <span class="ml-2"><a href="/jadwal-bimbingan">&gt;</a></span>
             </div>
           </div>
 
@@ -268,14 +268,14 @@
             </div>
             <div class="text-[14px] text-[#333]">
               10:00 - 11:00
-              <span class="ml-2"><a href="tampilanJB.html">&gt;</a></span>
+              <span class="ml-2"><a href="/jadwal-bimbingan">&gt;</a></span>
             </div>
           </div>
         </div>
 
       </div>
 
-      <div id="kirim-notifikasi" class="p-6 bg-[#1d222e] w-[40%] rounded-b-[10px]">
+      <div id="kirim-notifikasi" class="menu p-6 bg-[#1d222e] w-[40%] rounded-b-[10px]">
         <form class="flex flex-wrap gap-6 bg-[#f7f9ff] p-6 rounded-[10px]">
           <div class="flex-1 min-w-[300px]">
             <label for="id_mahasiswa" class="block font-bold mb-2 text-black">Pilih Mahasiswa :</label>
