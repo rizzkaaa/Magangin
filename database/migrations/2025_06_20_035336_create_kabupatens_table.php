@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('provinsis', function (Blueprint $table) {
-            $table->id(); // atau $table->string('id')->primary(); jika ID bukan autoincrement
+        Schema::create('kabupatens', function (Blueprint $table) {
+            $table->string('id')->primary(); // pakai string karena ID seperti 1101
+            $table->foreignId('provinsi_id')->constrained('provinsis')->onDelete('cascade');
             $table->string('name');
             $table->string('alt_name')->nullable();
             $table->decimal('latitude', 10, 6)->nullable();
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('provinsis');
+        Schema::dropIfExists('kabupatens');
     }
 };

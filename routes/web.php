@@ -42,6 +42,12 @@ Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 //     return view('test');
 // });
 
+use App\Http\Controllers\WilayahController;
+
+Route::get('/api/provinsis', [WilayahController::class, 'getProvinsis']);   // /
+Route::get('/api/kabupatens', [WilayahController::class, 'getKabupatens']); // ?provinsi_id=11
+Route::get('/api/kecamatans', [WilayahController::class, 'getKecamatans']); // ?kabupaten_id=1101
+
 
 
 
@@ -116,4 +122,3 @@ Route::get('/setup-users', function () {
 
     return 'Tabel users berhasil dibuat dan diisi 10 data dummy!';
 });
-
