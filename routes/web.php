@@ -48,6 +48,18 @@ Route::get('/api/provinsis', [WilayahController::class, 'getProvinsis']);   // /
 Route::get('/api/kabupatens', [WilayahController::class, 'getKabupatens']); // ?provinsi_id=11
 Route::get('/api/kecamatans', [WilayahController::class, 'getKecamatans']); // ?kabupaten_id=1101
 
+use App\Http\Controllers\API\LowonganController;
+use App\Http\Controllers\MahasiswaLowonganMagangController;
+
+Route::prefix('lowongan')->group(function () {
+    Route::get('/', [LowonganController::class, 'index']); // untuk menampilkan semua lowongan
+    Route::get('/{id}', [LowonganController::class, 'show']); // untuk mengambil longan berdasarkan id
+    Route::post('/', [LowonganController::class, 'store']); // untuk membuat lowongan baru
+    Route::put('/{id}', [LowonganController::class, 'update']); // untuk mengupdate lowongan
+    Route::delete('/{id}', [LowonganController::class, 'destroy']); // untuk menghapus lowongan
+
+    Route::get('/peserta/{id}/applied-lowongan', [MahasiswaLowonganMagangController::class, 'appliedLowongan']);  // ambil lowongan yang di apply oleh mahasiswa
+});
 
 
 

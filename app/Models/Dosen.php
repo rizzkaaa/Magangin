@@ -11,11 +11,19 @@ class Dosen extends Model
     protected $table = 'dosen';
 
     protected $fillable = [
-        'user_id', 'nama_dosen', 'nip', 'universitas',
+        'user_id',
+        'nama_dosen',
+        'nip',
+        'universitas',
     ];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function magangs()
+    {
+        return $this->hasMany(Magang::class, 'id_dosen');
     }
 }
